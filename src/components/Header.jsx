@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 function Header() {
   const [dark, setDark] = useState(false);
 
-  useEffect(() => {
+  useEffect(() => { 
     if (dark) {
       document.body.classList.add("dark")
     } else {
