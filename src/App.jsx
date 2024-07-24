@@ -2,10 +2,10 @@ import Note from "./components/Note.jsx";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import AddNote from "./components/AddNote.jsx";
-import { useState } from "react";
+import React from "react";
 
 function App() {
-  const [keeper, setKeeper] = useState([]);
+  const [keeper, setKeeper] = React.useState([]);
 
   function setKeep(e, values) {
     e.preventDefault();
@@ -28,7 +28,7 @@ function App() {
       })
     );
   }
-  
+
   return (
     <>
       <div className="App">
