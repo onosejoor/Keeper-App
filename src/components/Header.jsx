@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import React from "react";
 
 function Header() {
   const [dark, setDark] = useState(false);
@@ -26,7 +27,7 @@ function Header() {
           });
         }}
       >
-        <img src={dark ? "/images/brightness.png" : "/images/night-mode.png"} />
+        <img src={dark ? "/Keeper-App/images/brightness.png" : "/Keeper-App/images/night-mode.png"} />
       </button>
     </div>
   );
