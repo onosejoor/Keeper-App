@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  line-height: 1.5;
+  font-family: "Roboto", sans-serif;
+}
+
+img{
+  height: 20px;
+}
+
+body{
+  background-color: #b9b6b6;
+}
+
+.App{
+  height: 100vh;
+}
+
+.head{
+  background-color: orange;
+  padding: 2%;
+  color: white;
+  border-bottom: 2px solid white;
+  box-shadow: 0px 0px 6px gray;
+  display: flex;
+  justify-content: space-between;
+}
+
+.note{
+  height: fit-content;
+  width: 300px;
+  margin: 2%;
+  background: whitesmoke;
+  padding: 1.8%;
+  border-radius: 5px;
+}
+
+.footer{
+  text-align: center;
+    font-weight: 500;
+    color: grey;
+}
+
+.noteTitle{
+  font-weight: 500;
+  padding: 1%;
+  margin-bottom: 10px;
+  border-bottom: 0.5px solid gray;
+  font-size: x-large;
+}
+
+#note{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.text{
+  font-weight: 400;
+    font-size: larger;
+    margin-bottom: 1%;
+}
+
+.time{
+  margin-top: 2%;
+  font-size: smaller;
+}
+
+.addNote > form{
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  border-radius: 5px;
+  padding: 1.5%;
+}
+
+.addNote{
+display: flex;
+justify-content: center;
+  padding: 1rem;
+  margin-bottom: 1em;
+}
+
+form > input[type="text"]{
+  border: none;
+  padding: 1%;
+  color: black;
+}
+
+form > input[type="text"]:focus{
+  border: none;
+  outline: none;
+  padding: 1%;
+}
+
+input[type="text"]::placeholder{
+  color: black;
+}
+
+.add{
+  width: fit-content;
+  padding: 2%;
+  position: absolute;
+  left: 80%;
+  right: 50%;
+  border-radius: 50%;
+  background-color: orange;
+  border: none;
+  transform: translate(-70%, 80%);
+  color: white;
+  cursor: pointer;
+}
+
+.items{
+  display: flex;
+  justify-content: space-between;
+}
+
+.delete{
+  color: red;
+  border: none;
+  background-color: transparent;
+  line-height: 2.5;
+  cursor: pointer;
+}
+
+.theme{
+  height: fit-content;
+  line-height: 4;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.dark{
+  background-color: #202035;
+    
+  .head{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border-bottom: 2px solid rgb(0, 0, 0);
+    box-shadow: 0px 0px 6px rgb(255, 255, 255);
+  }
+
+  form{
+    border: 1px solid white;
+  }
+
+  form > input[type="text"]{
+    border: none;
+    padding: 1%;
+    color: rgb(0, 0, 0);
+  }
+  
+  input[type="text"]::placeholder{
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+  }
+
+  .add{
+    background-color: #202035;
+    border: 1px solid white;
+  }
+
+  footer{
+    color: white;
+  }
+}
+
+
+
+
+@media(max-width: 700px){
+  .addNote > form{
+    width: 90%;
+  }
+  .add{
+    transform: translate(0%, 90%);
+  }
+}
+
+
+@media(max-width: 500px) {
+  #note{
+    flex-wrap: wrap;
+  }
+
+  .head{
+    padding: 4%;
+    gap: 30px;
+  }
+
+  header > h1{
+    text-align: center;
+  }
+}
+
+@media(max-width:380px){
+  .add{
+    transform: translate(-30%, 100%);
+  }
+}
