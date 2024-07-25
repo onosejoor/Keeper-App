@@ -3,7 +3,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import AddNote from "./components/AddNote.jsx";
 import React from "react";
- 
+
 function App() {
   const [keeper, setKeeper] = React.useState([]);
 
@@ -11,18 +11,23 @@ function App() {
     e.preventDefault();
     const { title, text } = values;
     let time = new Date().toLocaleTimeString();
-
-    setKeeper((prev) => {
-      return [
-        ...prev,
-        { id: keeper.length + 1, title: title, text: text, time: time },
-      ];
-    });
+    if (title || text) {
+      setKeeper((prev) => {
+        return [
+          ...prev,
+          { id: keeper.length + 1, title: title, text: text, time: time },
+        ];
+      });
+    } else {
+      alert("Both Fields can't be Empty!");
+      setKeeper((prev) => {
+        return [...prev];
+      });
+    }
   }
 
   function deleteNote(e) {
     let id = parseInt(e.target.id);
-    console.log(id, e.target.id, e.target);
     setKeeper(
       keeper.filter((note) => {
         return note.id !== id;

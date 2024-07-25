@@ -121,7 +121,7 @@ textarea::placeholder {
   transition: 0.2s background-color linear;
 }
 .add:hover {
-  background-color: orangered;
+  background-color: orangered !important;
 }
 
 .items {
@@ -171,7 +171,7 @@ textarea::placeholder {
   }
 
   .add {
-    background-color: #202035;
+    background-color: #202035 !important;
     border: 1px solid white;
   }
 
