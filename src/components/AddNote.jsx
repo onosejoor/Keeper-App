@@ -33,7 +33,7 @@ function AddNote(props) {
   return (
     <>
       <div className="addNote">
-        <form>
+        <form className="addForm">
           {expanded && (
             <input
               onChange={setState}

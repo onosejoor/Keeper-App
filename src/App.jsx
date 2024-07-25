@@ -5,6 +5,7 @@ import AddNote from "./components/AddNote.jsx";
 import { useState } from "react";
 
 function App() {
+  // useState and localStorage
   const [keeper, setKeeper] = useState(() => {
     const saved = localStorage.getItem("note");
     const data = JSON.parse(saved);
@@ -12,6 +13,7 @@ function App() {
   });
   localStorage.setItem("note", JSON.stringify(keeper));
 
+  // set keeper App note
   function setKeep(e, values) {
     e.preventDefault();
     const { title, text } = values;
@@ -23,7 +25,6 @@ function App() {
           { id: keeper.length + 1, title: title, text: text, time: time },
         ];
       });
-
     } else {
       alert("Both Fields can't be Empty!");
       setKeeper((prev) => {
@@ -32,6 +33,24 @@ function App() {
     }
   }
 
+  // to edit notes
+  function edit(e, value) {
+    let id = parseInt(e.target.id);
+    let val = {
+      id: id,
+      title: value.title,
+      text: value.text,
+      time: value.time,
+    };
+
+    let find = keeper.filter((item) => {
+      return item.id !== id;
+    });
+
+    setKeeper([val, ...find]);
+  }
+
+  // delete a note
   function deleteNote(e) {
     let id = parseInt(e.target.id);
     setKeeper(
@@ -55,6 +74,7 @@ function App() {
               text={item.text}
               time={item.time}
               delete={deleteNote}
+              edit={edit}
             />
           ))}
         </div>

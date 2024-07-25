@@ -70,7 +70,7 @@ body {
   font-size: smaller;
 }
 
-.addNote > form {
+.addNote > .addForm {
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -86,7 +86,7 @@ body {
   margin-bottom: 1em;
 }
 
-form > input[type="text"],
+.addForm > input[type="text"],
 textarea {
   border: none;
   padding: 1%;
@@ -94,7 +94,7 @@ textarea {
   resize: none;
 }
 
-form > input[type="text"]:focus, textarea:focus {
+.addForm > input[type="text"]:focus, textarea:focus {
   border: none;
   outline: none;
   padding: 1%;
@@ -124,6 +124,28 @@ textarea::placeholder {
   background-color: orangered !important;
 }
 
+.editForm > input{
+display: flex;
+width: 100%;
+gap: 10px;
+}
+
+.editForm > input:first-child{
+  border-bottom: 1px solid black !important;
+}
+
+.edit{
+  margin-bottom: 10px;
+  border: none;
+  font-size: large;
+  background: transparent;
+  padding: 1%;
+}
+
+.edit:focus{
+  outline: none;
+}
+
 .items {
   display: flex;
   justify-content: space-between;
@@ -135,6 +157,21 @@ textarea::placeholder {
   background-color: transparent;
   line-height: 2.5;
   cursor: pointer;
+}
+
+.edited{
+  color: green;
+  font-weight: 500;
+}
+
+.pen{
+  line-height: 1.5;
+}
+
+.icon{
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
 }
 
 .theme {
@@ -155,11 +192,11 @@ textarea::placeholder {
     box-shadow: 0px 0px 6px rgb(255, 255, 255);
   }
 
-  form {
+  .addForm {
     border: 1px solid white;
   }
 
-  form > input[type="text"] {
+  .addForm > input[type="text"] {
     border: none;
     padding: 1%;
     color: rgb(0, 0, 0);
@@ -181,7 +218,7 @@ textarea::placeholder {
 }
 
 @media (max-width: 700px) {
-  .addNote > form {
+  .addNote > .addForm {
     width: 90%;
   }
   .add {
