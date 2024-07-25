@@ -8,19 +8,19 @@
   font-family: "Roboto", sans-serif;
 }
 
-img{
+img {
   height: 20px;
 }
 
-body{
+body {
   background-color: #b9b6b6;
 }
 
-.App{
+.App {
   height: 100vh;
 }
 
-.head{
+.head {
   background-color: orange;
   padding: 2%;
   color: white;
@@ -30,7 +30,7 @@ body{
   justify-content: space-between;
 }
 
-.note{
+.note {
   height: fit-content;
   width: 300px;
   margin: 2%;
@@ -39,13 +39,13 @@ body{
   border-radius: 5px;
 }
 
-.footer{
+.footer {
   text-align: center;
-    font-weight: 500;
-    color: grey;
+  font-weight: 500;
+  color: grey;
 }
 
-.noteTitle{
+.noteTitle {
   font-weight: 500;
   padding: 1%;
   margin-bottom: 10px;
@@ -53,24 +53,24 @@ body{
   font-size: x-large;
 }
 
-#note{
+#note {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-.text{
+.text {
   font-weight: 400;
-    font-size: larger;
-    margin-bottom: 1%;
+  font-size: larger;
+  margin-bottom: 1%;
 }
 
-.time{
+.time {
   margin-top: 2%;
   font-size: smaller;
 }
 
-.addNote > form{
+.addNote > form {
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -79,49 +79,57 @@ body{
   padding: 1.5%;
 }
 
-.addNote{
-display: flex;
-justify-content: center;
+.addNote {
+  display: flex;
+  justify-content: center;
   padding: 1rem;
   margin-bottom: 1em;
 }
 
-form > input[type="text"]{
+form > input[type="text"],
+textarea {
   border: none;
   padding: 1%;
   color: black;
+  resize: none;
 }
 
-form > input[type="text"]:focus{
+form > input[type="text"]:focus, textarea:focus {
   border: none;
   outline: none;
   padding: 1%;
 }
 
-input[type="text"]::placeholder{
+input[type="text"]::placeholder,
+textarea::placeholder {
   color: black;
 }
 
-.add{
+.add {
   width: fit-content;
   padding: 2%;
   position: absolute;
   left: 80%;
   right: 50%;
   border-radius: 50%;
-  background-color: orange;
+  background-color: orange !important;
   border: none;
-  transform: translate(-70%, 80%);
+  transform: translate(-70%, 120%);
   color: white;
   cursor: pointer;
+  display: flex;
+  transition: 0.2s background-color linear;
+}
+.add:hover {
+  background-color: orangered;
 }
 
-.items{
+.items {
   display: flex;
   justify-content: space-between;
 }
 
-.delete{
+.delete {
   color: red;
   border: none;
   background-color: transparent;
@@ -129,7 +137,7 @@ input[type="text"]::placeholder{
   cursor: pointer;
 }
 
-.theme{
+.theme {
   height: fit-content;
   line-height: 4;
   background: transparent;
@@ -137,71 +145,67 @@ input[type="text"]::placeholder{
   cursor: pointer;
 }
 
-.dark{
+.dark {
   background-color: #202035;
-    
-  .head{
+
+  .head {
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
     border-bottom: 2px solid rgb(0, 0, 0);
     box-shadow: 0px 0px 6px rgb(255, 255, 255);
   }
 
-  form{
+  form {
     border: 1px solid white;
   }
 
-  form > input[type="text"]{
+  form > input[type="text"] {
     border: none;
     padding: 1%;
     color: rgb(0, 0, 0);
   }
-  
-  input[type="text"]::placeholder{
+
+  input[type="text"]::placeholder,textarea::placeholder {
     color: rgb(0, 0, 0);
     font-weight: 600;
   }
 
-  .add{
+  .add {
     background-color: #202035;
     border: 1px solid white;
   }
 
-  footer{
+  footer {
     color: white;
   }
 }
 
-
-
-
-@media(max-width: 700px){
-  .addNote > form{
+@media (max-width: 700px) {
+  .addNote > form {
     width: 90%;
   }
-  .add{
-    transform: translate(0%, 90%);
+  .add {
+    transform: translate(10%, 170%);
   }
 }
 
-
-@media(max-width: 500px) {
-  #note{
+@media (max-width: 500px) {
+  #note {
     flex-wrap: wrap;
   }
 
-  .head{
+  .head {
     padding: 4%;
     gap: 30px;
   }
 
-  header > h1{
+  header > h1 {
     text-align: center;
   }
 }
 
-@media(max-width:380px){
-  .add{
-    transform: translate(-30%, 100%);
+@media (max-width: 400px) {
+  .add {
+  transform: translate(-40%, 200%);
   }
 }

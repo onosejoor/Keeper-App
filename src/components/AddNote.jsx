@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import AddIcon from "@mui/icons-material/Add";
 
 function AddNote(props) {
   const [note, setNote] = useState({
@@ -37,22 +38,19 @@ function AddNote(props) {
             value={note.title}
             autoComplete="false"
           />
-          <input
+          <textarea
             onChange={setState}
             type="text"
             name="text"
-            id="text"
             placeholder="Enter Content"
             value={note.text}
             autoComplete="false"
-            required
+            required="true"
+            rows="3"
           />
-          <button
-            type="submit"
-            className="add"
-            onClick={submit}
-          >
-            Add
+
+          <button type="submit" className="add" onClick={submit}>
+            <AddIcon />
           </button>
         </form>
       </div>

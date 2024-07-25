@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import React from "react";
+import EditNoteIcon from '@mui/icons-material/EditNote';
+// import React from "react";
 
 function Header() {
   const [dark, setDark] = useState(false);
@@ -13,19 +14,22 @@ function Header() {
 
   }, [dark]);
 
+  function setD () {
+    setDark((prev) => {
+      return !prev;
+    })
+  }
+
 
   return (
     <div className="head">
       <header>
-        <h1 className="header">Keeper</h1>
+        <h1 className="header"><EditNoteIcon/>Keeper</h1>
       </header>
       <button
         className="theme"
-        onClick={() => {
-          setDark((prev) => {
-            return !prev;
-          });
-        }}
+        onClick={setD}
+        
       >
         <img src={dark ? "/Keeper-App/images/brightness.png" : "/Keeper-App/images/night-mode.png"} />
       </button>

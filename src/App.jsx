@@ -22,6 +22,7 @@ function App() {
 
   function deleteNote(e) {
     let id = parseInt(e.target.id);
+    console.log(id, e.target.id, e.target);
     setKeeper(
       keeper.filter((note) => {
         return note.id !== id;
