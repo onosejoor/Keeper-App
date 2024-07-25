@@ -2,10 +2,15 @@ import Note from "./components/Note.jsx";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import AddNote from "./components/AddNote.jsx";
-import React from "react";
+import { useState } from "react";
 
 function App() {
-  const [keeper, setKeeper] = React.useState([]);
+  const [keeper, setKeeper] = useState(() => {
+    const saved = localStorage.getItem("note");
+    const data = JSON.parse(saved);
+    return data || [];
+  });
+  localStorage.setItem("note", JSON.stringify(keeper));
 
   function setKeep(e, values) {
     e.preventDefault();
@@ -18,6 +23,7 @@ function App() {
           { id: keeper.length + 1, title: title, text: text, time: time },
         ];
       });
+
     } else {
       alert("Both Fields can't be Empty!");
       setKeeper((prev) => {

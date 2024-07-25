@@ -9,9 +9,7 @@ function AddNote(props) {
   const [expanded, setExpanded] = useState(false);
 
   function exp() {
-    setExpanded((prev) => {
-      return !prev
-    });
+    setExpanded(true);
   }
 
   function setState(e) {
@@ -54,14 +52,14 @@ function AddNote(props) {
             onChange={setState}
             type="text"
             name="text"
-            placeholder="Enter Content"
+            placeholder="Enter Content..."
             value={note.text}
             autoComplete="false"
             required={true}
             rows={expanded ? "3" : "2"}
           />
           {expanded && (
-            <button type="submit" className="add" onClick={(e) => {submit(e); exp()}}>
+            <button type="submit" className="add" onClick={submit}>
               <AddIcon />
             </button>
           )}

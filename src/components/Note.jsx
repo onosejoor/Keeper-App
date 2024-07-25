@@ -2,7 +2,7 @@
 
 function Note(props) {
   return (
-    <div className="note">
+    <div className="note" key={props.id}>
       <h3 className="noteTitle">{props.title}</h3>
       <p className="text">{props.text}</p>
       <div className="items">
