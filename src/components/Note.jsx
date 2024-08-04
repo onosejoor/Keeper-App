@@ -39,12 +39,13 @@ function Note(props) {
               onChange={change}
               value={note.title}
             />
-            <input
+            <textarea
               className="edit"
               type="text"
               name="text"
               onChange={change}
               value={note.text}
+              rows={10}
             />
 
             <div className="items">

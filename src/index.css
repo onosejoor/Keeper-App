@@ -140,6 +140,8 @@ gap: 10px;
   font-size: large;
   background: transparent;
   padding: 1%;
+  width: 100%;
+  resize: none;
 }
 
 .edit:focus{
